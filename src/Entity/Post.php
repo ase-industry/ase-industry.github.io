@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
-use DateTime;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
@@ -21,10 +21,10 @@ class Post
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Username = null;
+    private ?string $username = null;
 
-    #[ORM\Column(length: 255)]
-    private ?DateTime $date = null;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $date = null;
 
     public function getId(): ?int
     {
@@ -57,22 +57,22 @@ class Post
 
     public function getUsername(): ?string
     {
-        return $this->Username;
+        return $this->username;
     }
 
-    public function setUsername(string $Username): self
+    public function setUsername(string $username): self
     {
-        $this->Username = $Username;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getDate(): ?DateTime
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(DateTime $date): self
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
 
