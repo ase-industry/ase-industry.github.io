@@ -34,7 +34,7 @@ class AdminCommentsController extends AbstractController
             return $this->redirectToRoute('app_admin_comments_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin_comments/new.html.twig', [
+        return $this->render('admin_comments/new.html.twig', [
             'comment' => $comment,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class AdminCommentsController extends AbstractController
             return $this->redirectToRoute('app_admin_comments_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin_comments/edit.html.twig', [
+        return $this->render('admin_comments/edit.html.twig', [
             'comment' => $comment,
             'form' => $form,
         ]);
