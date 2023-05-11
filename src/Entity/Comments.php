@@ -23,6 +23,9 @@ class Comments
     #[ORM\Column(length: 255)]
     private ?string $username = null;
 
+    #[ORM\ManyToOne(inversedBy: 'comments')]
+    private ?Pc $pc = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Comments
     public function setUsername(string $username): self
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    public function getPc(): ?Pc
+    {
+        return $this->pc;
+    }
+
+    public function setPc(?Pc $pc): self
+    {
+        $this->pc = $pc;
 
         return $this;
     }
