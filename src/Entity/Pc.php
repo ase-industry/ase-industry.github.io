@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Tests\Fixtures\Metadata\Get;
 use App\Repository\PcRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: PcRepository::class)]
+
 class Pc
 {
     #[ORM\Id]
@@ -18,13 +23,18 @@ class Pc
     private ?string $brand = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 6, scale: 2)]
-    private ?string $prix = null;
+    private ?int $prix = null;
 
     #[ORM\Column(length: 255)]
     private ?string $model = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $specification = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $photo = null;
+
+
 
     public function getId(): ?int
     {
@@ -78,4 +88,18 @@ class Pc
 
         return $this;
     }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+
 }
