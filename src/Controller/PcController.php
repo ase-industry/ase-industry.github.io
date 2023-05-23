@@ -27,7 +27,7 @@ class PcController extends AbstractController
     /**
      * @throws TransportExceptionInterface
      */
-    #[Route('/pc', name: 'app_pc')]
+    #[Route('/pc', name: 'pc')]
     public function index(Environment $twig, PcRepository $pcRepository): Response
     {
 
@@ -41,5 +41,7 @@ class PcController extends AbstractController
             ]
         ));
     }
+
+
 
 }

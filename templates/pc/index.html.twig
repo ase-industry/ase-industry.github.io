@@ -12,6 +12,9 @@
 
 {% for pc in pcs %}
     <img src="{{ asset( 'images/' ~ pc.photo) }}" height="150"/><br>
+    <p>
+    <a href="{{ path('pc', { slug: pc.brand }) }}">View</a>
+    </p>
     <br>
     {{ pc.brand }}<br>
     {{ pc.model }}<br>
