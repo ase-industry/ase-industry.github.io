@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PcController!{% endblock %}
+{% block title %}PC{% endblock %}
 
 {% block body %}
 <style>
@@ -92,6 +92,7 @@
         opacity: 0.5;
     }
 </style>
+
 
 <html>
 <head>
@@ -194,4 +195,19 @@
   </div>
 </body>
 </html>
+
+
+
+{% for pc in pcs %}
+    <img src="{{ asset( 'images/' ~ pc.photo) }}" height="150"/><br>
+    <br>
+    {{ pc.brand }}<br>
+    {{ pc.model }}<br>
+    {{ pc.prix }} euro <br>
+
+    <p>
+        <a href="{{ path('pc_details', { id: pc.id }) }}">View</a>
+    </p>
+{% endfor %}
+
 {% endblock %}

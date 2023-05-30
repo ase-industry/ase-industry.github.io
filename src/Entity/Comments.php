@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Api\IdentifiersExtractorInterface;
 use App\Repository\CommentsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: CommentsRepository::class)]
 class Comments
@@ -21,7 +23,9 @@ class Comments
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $username = null;
+    private ?string $email = null;
+
+
 
     public function getId(): ?int
     {
@@ -52,14 +56,14 @@ class Comments
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getEmail(): ?string
     {
-        return $this->username;
+        return $this->email;
     }
 
-    public function setUsername(string $username): self
+    public function setEmail(string $email): self
     {
-        $this->username = $username;
+        $this->email = $email;
 
         return $this;
     }
