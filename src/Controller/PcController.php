@@ -10,8 +10,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 class PcController extends AbstractController
 {
@@ -40,8 +44,22 @@ class PcController extends AbstractController
                 'pcs' => $pc
             ]
         ));
+
     }
 
+    /**
+     * @throws SyntaxError
+     * @throws RuntimeError
+     * @throws LoaderError
+     */
+    #[Route('/pc/{id}', name: 'pc_details')]
+    public function show(Environment $twig,PcRepository $pcRepository,$id):Response
+    {
+        $detail = $pcRepository->find($id);
 
+        return new Response($twig->render('pc/detail.html.twig',
+            ['details'=>$detail]
+        ));
+    }
 
 }

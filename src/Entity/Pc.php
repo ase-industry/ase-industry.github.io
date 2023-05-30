@@ -14,7 +14,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 
 #[ORM\Entity(repositoryClass: PcRepository::class)]
-#[UniqueEntity('slug')]
+
 class Pc
 {
     #[ORM\Id]
@@ -123,6 +123,11 @@ class Pc
         $this->slug = $slug;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->slug;
     }
 
 
