@@ -13,7 +13,7 @@ class CommentsType extends AbstractType
     {
         $builder
             ->add('content')
-            ->add('username')
+            ->add('email')
         ;
     }
 

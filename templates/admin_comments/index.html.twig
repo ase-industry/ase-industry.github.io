@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Content</th>
                 <th>Date</th>
-                <th>Username</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,7 +20,6 @@
                 <td>{{ comment.id }}</td>
                 <td>{{ comment.content }}</td>
                 <td>{{ comment.date ? comment.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ comment.username }}</td>
                 <td>
                     <a href="{{ path('app_admin_comments_show', {'id': comment.id}) }}">show</a>
                     <a href="{{ path('app_admin_comments_edit', {'id': comment.id}) }}">edit</a>

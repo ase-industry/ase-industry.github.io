@@ -20,7 +20,6 @@ final class Version20230523093727 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE pc ADD photo VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema): void
