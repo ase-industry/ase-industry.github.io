@@ -9,6 +9,9 @@ use App\Repository\PcRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\String\Slugger\SluggerInterface;
+
 
 #[ORM\Entity(repositoryClass: PcRepository::class)]
 
@@ -34,11 +37,20 @@ class Pc
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
+    #[ORM\Column(type: 'string', length: 255, unique: true)]
+    private ?string $slug = null;
+
 
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function computeSlug(SluggerInterface $slugger)
+    {
+        if (!$this->slug || '-' === $this->slug) {
+            $this->slug = (string) $slugger->slug((string) $this)->lower();
+        }
     }
 
     public function getBrand(): ?string
@@ -99,6 +111,23 @@ class Pc
         $this->photo = $photo;
 
         return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->slug;
     }
 
 

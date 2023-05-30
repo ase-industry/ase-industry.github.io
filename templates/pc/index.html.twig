@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PcController!{% endblock %}
+{% block title %}PC{% endblock %}
 
 {% block body %}
 <style>
@@ -17,5 +17,9 @@
     {{ pc.model }}<br>
     {{ pc.prix }} euro <br>
 
+    <p>
+        <a href="{{ path('pc_details', { id: pc.id }) }}">View</a>
+    </p>
 {% endfor %}
+
 {% endblock %}
