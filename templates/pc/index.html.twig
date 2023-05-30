@@ -4,9 +4,197 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: Raleway;
+        background-color: #202125;
+    }
+    
+    .heading {
+        text-align: center;
+        font-size: 2.0em;
+        letter-spacing: 1px;
+        padding: 40px;
+        color: white;
+    }
+    
+    .gallery-image {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .gallery-image img {
+        height: 250px;
+        width: 350px;
+        transform: scale(1.0);
+        transition: transform 0.4s ease;
+    }
+    
+    .img-box {
+        box-sizing: content-box;
+        margin: 10px;
+        height: 250px;
+        width: 350px;
+        overflow: hidden;
+        display: inline-block;
+        color: white;
+        position: relative;
+        background-color: white;
+    }
+    
+    .caption {
+        position: absolute;
+        bottom: 5px;
+        left: 20px;
+        opacity: 0.0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .transparent-box {
+        height: 250px;
+        width: 350px;
+        background-color:rgba(0, 0, 0, 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: background-color 0.3s ease;
+    }
+    
+    .img-box:hover img { 
+        transform: scale(1.1);
+    }
+    
+    .img-box:hover .transparent-box {
+        background-color:rgba(0, 0, 0, 0.5);
+    }
+    
+    .img-box:hover .caption {
+        transform: translateY(-20px);
+        opacity: 1.0;
+    }
+    
+    .img-box:hover {
+        cursor: pointer;
+    }
+    
+    .caption > p:nth-child(2) {
+        font-size: 0.8em;
+    }
+    
+    .opacity-low {
+        opacity: 0.5;
+    }
 </style>
+
+
+<html>
+<head>
+  <title>CSS Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
+</head>
+<body>
+  <p class="heading">PC Gallery</p>
+  <div class="gallery-image">
+    <div class="img-box">
+      <img src="public\images\pchome.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>PC 1</p>
+          <p class="opacity-low">pc1 DESCRIPTION</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="assets\images\pchome.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>PC 2</p>
+          <p class="opacity-low">pc2 description</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="assets\images\pchome.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>PC 3</p>
+          <p class="opacity-low">pc3 description</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="assets\images\pchome.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>PC 4</p>
+          <p class="opacity-low">pc4 description</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="assets\images\pchome.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>PC 5</p>
+          <p class="opacity-low">pc5 DESCRIPTION</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="assets\images\pchome.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>PC6</p>
+          <p class="opacity-low">pc6 description</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+        <img src="assets\images\pchome.jpg" alt="" />
+        <div class="transparent-box">
+          <div class="caption">
+            <p>PC7</p>
+            <p class="opacity-low">pc7 description</p>
+          </div>
+        </div> 
+      </div>
+      <div class="img-box">
+        <img src="assets\images\pchome.jpg" alt="" />
+        <div class="transparent-box">
+          <div class="caption">
+            <p>PC8</p>
+            <p class="opacity-low">pc8 description</p>
+          </div>
+        </div> 
+      </div>
+      <div class="img-box">
+        <img src="assets\images\pchome.jpg" alt="" />
+        <div class="transparent-box">
+          <div class="caption">
+            <p>PC9</p>
+            <p class="opacity-low">pc9 description</p>
+          </div>
+        </div> 
+      </div>
+      <div class="img-box">
+        <img src="assets\images\pchome.jpg" alt="" />
+        <div class="transparent-box">
+          <div class="caption">
+            <p>PC10</p>
+            <p class="opacity-low">pc10 description</p>
+          </div>
+        </div> 
+      </div>
+  </div>
+</body>
+</html>
 
 
 

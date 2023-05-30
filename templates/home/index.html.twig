@@ -2,19 +2,110 @@
 
 {% block title %}Hello HomeController!{% endblock %}
 
-{% block body %}
+{% block stylesheets %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Karla', sans-serif;
+    }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    .logo a{
+        font-size: 40px;
+        text-decoration: none;
+        margin-left: 100px;
+        }
+    span{
+        color: #f9004d;
+    }
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Esther/Documents/Programmation/PHP/ASE/ASE/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Esther/Documents/Programmation/PHP/ASE/ASE/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+    ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 100px 15px;
+        }
+        ul li a{
+        text-decoration: none;
+        transition: 0.5s;
+        }
+        nav ul li a:hover{
+        color: #f9004d;
+        }
+    
+    .main
+    {
+        background-color: ##0F2A66
+    }
+
+    body{
+        color: #0F2A66;
+    }
+
+
+
+    span{
+        color: #f9004d;
+    }
+    nul li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 15px;
+    }
+    ul li a{
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    ul li a:hover{
+        color: #BC003E;
+    }
+    
+    .content{
+        margin-left: 100px;
+        margin-top: 10%;
+        max-width: 600px;
+    }
+    .content h2{
+        font-size: 60px
+    }
+    .content p{
+    
+        margin-top: 10px;
+        line-height: 25px;
+    }
+    a{
+        color: #0F2A66;
+    }
+    .link {
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+    .hire{
+        color: #fff;
+        text-decoration: none;
+        background: #0F2A66;
+        padding: 9px 25px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: 0.5s;
+    
+    }
+    .link .hire:hover{
+        background: transparent;
+        border: 1px solid #BC003E;
+        color: #BC003E;
+    }
+</style>  
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h2>Bienvenue,<br>Nous sommes <br>Ase-Industry</h2>
+    <p>voici notre site web,<br>qui promouvoie des pc en collaboration avec amazon.</p>
+    </div>
+    <div class="link">
+    <a href="{{ path('app_pc') }}" class="hire">Voir les PC</a>
+    </div>
 </div>
 {% endblock %}
