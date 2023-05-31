@@ -25,6 +25,25 @@ class Admin
         return $this->id;
     }
 
+    #[ORM\Column]
+    private array $rolesAdmin = [];
+
+    public function getRolesAdmin(): array
+    {
+        $rolesAdmin = $this->rolesAdmin;
+        // guarantee every user at least has ROLE_USER
+        $rolesAdmin[] = 'ROLE_SUPER_ADMIN';
+
+        return array_unique($rolesAdmin);
+    }
+
+    public function setRolesAdmin(array $rolesAdmin): self
+    {
+        $this->rolesAdmin = $rolesAdmin;
+
+        return $this;
+    }
+
     public function getEmail(): ?string
     {
         return $this->email;
