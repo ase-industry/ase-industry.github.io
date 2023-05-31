@@ -35,6 +35,7 @@
         width: 350px;
         transform: scale(1.0);
         transition: transform 0.4s ease;
+        
     }
     
     .img-box {
@@ -93,121 +94,28 @@
     }
 </style>
 
-
+{% for pc in pcs %}
 <html>
 <head>
   <title>CSS Gallery</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
 </head>
 <body>
-  <p class="heading">PC Gallery</p>
   <div class="gallery-image">
     <div class="img-box">
-      <img src="public\images\pchome.jpg" alt="" />
+      <img src="{{ asset( 'images/' ~ pc.photo) }}" height="150" alt="" />
       <div class="transparent-box">
         <div class="caption">
-          <p>PC 1</p>
-          <p class="opacity-low">pc1 DESCRIPTION</p>
+          <p>{{ pc.brand }}</p>
+          <p class="opacity-low">{{ pc.model }}</p>
         </div>
       </div> 
-    </div>
-    <div class="img-box">
-      <img src="assets\images\pchome.jpg" alt="" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p>PC 2</p>
-          <p class="opacity-low">pc2 description</p>
-        </div>
-      </div>
-    </div>
-    <div class="img-box">
-      <img src="assets\images\pchome.jpg" alt="" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p>PC 3</p>
-          <p class="opacity-low">pc3 description</p>
-        </div>
-      </div>
-    </div>
-    <div class="img-box">
-      <img src="assets\images\pchome.jpg" alt="" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p>PC 4</p>
-          <p class="opacity-low">pc4 description</p>
-        </div>
-      </div> 
-    </div>
-    <div class="img-box">
-      <img src="assets\images\pchome.jpg" alt="" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p>PC 5</p>
-          <p class="opacity-low">pc5 DESCRIPTION</p>
-        </div>
-      </div> 
-    </div>
-    <div class="img-box">
-      <img src="assets\images\pchome.jpg" alt="" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p>PC6</p>
-          <p class="opacity-low">pc6 description</p>
-        </div>
-      </div> 
-    </div>
-    <div class="img-box">
-        <img src="assets\images\pchome.jpg" alt="" />
-        <div class="transparent-box">
-          <div class="caption">
-            <p>PC7</p>
-            <p class="opacity-low">pc7 description</p>
-          </div>
-        </div> 
-      </div>
-      <div class="img-box">
-        <img src="assets\images\pchome.jpg" alt="" />
-        <div class="transparent-box">
-          <div class="caption">
-            <p>PC8</p>
-            <p class="opacity-low">pc8 description</p>
-          </div>
-        </div> 
-      </div>
-      <div class="img-box">
-        <img src="assets\images\pchome.jpg" alt="" />
-        <div class="transparent-box">
-          <div class="caption">
-            <p>PC9</p>
-            <p class="opacity-low">pc9 description</p>
-          </div>
-        </div> 
-      </div>
-      <div class="img-box">
-        <img src="assets\images\pchome.jpg" alt="" />
-        <div class="transparent-box">
-          <div class="caption">
-            <p>PC10</p>
-            <p class="opacity-low">pc10 description</p>
-          </div>
-        </div> 
-      </div>
+    </div>  
   </div>
 </body>
 </html>
 
 
-
-{% for pc in pcs %}
-    <img src="{{ asset( 'images/' ~ pc.photo) }}" height="150"/><br>
-    <br>
-    {{ pc.brand }}<br>
-    {{ pc.model }}<br>
-    {{ pc.prix }} euro <br>
-
-    <p>
-        <a href="{{ path('pc_details', { id: pc.id }) }}">View</a>
-    </p>
 {% endfor %}
 
 {% endblock %}
