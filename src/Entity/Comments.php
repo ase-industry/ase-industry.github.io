@@ -27,6 +27,11 @@ class Comments
 
 
 
+    public function __toString(): string
+    {
+        return (string) $this->getUsername();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
