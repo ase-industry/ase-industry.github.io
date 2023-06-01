@@ -91,12 +91,20 @@ $phpDocNode = $phpDocParser->parse($tokens); // PhpDocNode
 $cloningTraverser = new NodeTraverser([new CloningVisitor()]);
 
 /** @var PhpDocNode $newPhpDocNode */
+<<<<<<< HEAD
 $printer = new Printer();
+=======
+>>>>>>> origin/master
 [$newPhpDocNode] = $cloningTraverser->traverse([$phpDocNode]);
 
 // change something in $newPhpDocNode
 $newPhpDocNode->getParamTagValues()[0]->type = new IdentifierTypeNode('Ipsum');
 
+<<<<<<< HEAD
+=======
+// print changed PHPDoc
+$printer = new Printer();
+>>>>>>> origin/master
 $newPhpDoc = $printer->printFormatPreserving($newPhpDocNode, $phpDocNode, $tokens);
 echo $newPhpDoc; // '/** @param Ipsum $a */'
 ```

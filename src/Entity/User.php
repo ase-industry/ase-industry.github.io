@@ -34,8 +34,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
 
     public function getId(): ?int
     {
@@ -98,6 +100,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+
     /**
      * @see UserInterface
      */
@@ -118,4 +121,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
 }

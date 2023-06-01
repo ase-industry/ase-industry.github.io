@@ -137,12 +137,17 @@ class PhpDocParser
 
 		if ($this->useIndexAttributes) {
 			$tokensArray = $tokens->getTokens();
+<<<<<<< HEAD
 			if ($tokensArray[$endIndex][Lexer::TYPE_OFFSET] === Lexer::TOKEN_CLOSE_PHPDOC) {
 				$endIndex--;
 				if ($tokensArray[$endIndex][Lexer::TYPE_OFFSET] === Lexer::TOKEN_HORIZONTAL_WS) {
 					$endIndex--;
 				}
 			} elseif ($tokensArray[$endIndex][Lexer::TYPE_OFFSET] === Lexer::TOKEN_PHPDOC_EOL) {
+=======
+			$endIndex--;
+			if ($tokensArray[$endIndex][Lexer::TYPE_OFFSET] === Lexer::TOKEN_HORIZONTAL_WS) {
+>>>>>>> origin/master
 				$endIndex--;
 			}
 
