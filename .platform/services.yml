@@ -1,0 +1,3 @@
+database1:
+    type: mysql:8
+    disk: 2048
