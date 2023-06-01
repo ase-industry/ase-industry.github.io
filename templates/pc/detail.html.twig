@@ -4,9 +4,40 @@
 
 {% block body %}
     <style>
+body {
+        font-family: Raleway;
+        background-color: #202125;
+    }
+.wrapper {
+    width: 1000px;
+    background: #ffffff;
+    margin: 20px auto;
+    min-height: 200px;
+    border: 1px solid #ffffff;
+  }
+  .wrapper .inner-warpper {
+    padding: 50px 30px 60px;
+    box-shadow: 1px 1.732px 10px 0px rgba(0, 0, 0, 0.063);
+  }
+  .wrapper .title {
+    margin-top: 0;
+  }
+  .wrapper .supporter {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #8E8E8E;
+    cursor: pointer;
+  }
+  .wrapper .remember-me {
+    cursor: pointer;
+  }
+.btn{
+margin-bottom: 20px;
+margin-left: 30px;
+}
         .example-wrapper {
             margin: 1em auto;
-            max-width: 800px;
+            max-width: 1200px;
             width: 95%;
             font: 18px/1.5 sans-serif;
         }
@@ -16,16 +47,33 @@
             padding: 2px 6px;
         }
     </style>
-    <img src="{{ asset( 'images/' ~ details.photo) }}" height="150"/><br>
-    <br>
-    {{ details.brand }}<br>
-    {{ details.model }}<br>
-    {{ details.prix }} euro <br>
-    {{ details.specification }}
 
-    <p>
-        <a href="{{ path('pc', { id: details.id }) }}">Back</a>
-    </p>
+    <div class="wrapper">
+        <div class="inner-warpper text-center">
+            <img src="{{ asset( 'images/' ~ details.photo) }}" height="150"/><br><br>
+          <h2 class="title"></h2>
+          {{ details.brand }}<br><br>
+          <form action="" id="formvalidate">
+            <div class="input-group">
+                <a > Model :</a>{{ details.model }}<br><br>
+              <span class="lighting"></span>
+            </div>
+            <div class="input-group">
+                <a > prix :</a> {{ details.prix }}<br><br>
+              
+              <span class="lighting"></span>
+            </div>
+            <br>
+            <a > Spécifications :</a>
+            {{ details.specification }}
+      
+            
+        
+        
+      </div>
+      <button type="submit" class="btn"><a href="{{ path('pc', { id: details.id }) }}">Back</a></button>
+    <br>
+   
     {% for detail in details %}
 
 

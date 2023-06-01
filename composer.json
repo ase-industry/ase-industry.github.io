@@ -38,11 +38,7 @@
         "symfony/process": "6.2.*",
         "symfony/property-access": "6.2.*",
         "symfony/property-info": "6.2.*",
-<<<<<<< HEAD
-        "symfony/runtime": "^6.3",
-=======
         "symfony/runtime": "6.2.*",
->>>>>>> bf5db88e27b85bcf0d7b12f36074c4872b80d4eb
         "symfony/security-bundle": "6.2.*",
         "symfony/serializer": "6.2.*",
         "symfony/string": "6.2.*",

@@ -57,9 +57,14 @@
             "version": "1.5",
             "ref": "6bea22e6c564fba3a1391615cada1437d0bde39c"
         },
+
         "files": [
             "./config/packages/nelmio_cors.yaml"
-        ]
+            ]
+    },
+
+       
+    
 
     "easycorp/easyadmin-bundle": {
         "version": "4.6",

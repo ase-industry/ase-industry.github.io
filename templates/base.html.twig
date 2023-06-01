@@ -44,15 +44,16 @@
   <body class="layout">
     <header>
       <nav class="navbar shadow-1 primary">
-        <a  class="navbar-brand">Ase Industry</a>
+        <img src="assets/ase_industry.jpg" alt="" class="brand">
         <div class="navbar-menu ml-auto">
-            <a class="navbar-link" href="/">Acceuil</a>
-            <a class="navbar-link" href="pc">Pc</a>
-            <a class="navbar-link" href="about">A propos </a>
+            <a class="navbar-link" href="{{ path('app_home') }}">Acceuil</a>
+            <a class="navbar-link" href="{{ path('pc') }}">Pc</a>
+            <a class="navbar-link" href="{{ path('app_about') }}">A propos </a>
 
-            
-                <a class="navbar-link" href="login"><button type="button" class="btn btn-dark btn-sm">Connexion</button></a>
-                <a class="navbar-link" href="register"><button type="button" class="btn btn-dark btn-sm">Inscription</button></a>
+
+                <a class="navbar-link" href="{{ path('app_login') }}"><button type="button" class="btn btn-dark btn-sm">Connexion</button></a>
+                <a class="navbar-link" href="{{ path('app_register') }}"><button type="button" class="btn btn-dark btn-sm">Inscription</button></a>
+                <a class="navbar-link" href="{{ path('admin') }}">Gestion</a>
             
         </div>
       </nav>
