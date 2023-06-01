@@ -9,3 +9,5 @@ PHP
 HTML
 CSS
 JS
+
+/!\ Les commentaires sont desactives car ils fesaient sauter tout le site , ils seront reimplante dans les prochains jours 31/05/2023
